@@ -1,0 +1,16 @@
+[
+{
+  "modid": "${modid}",
+  "name": "Atomic Assembly",
+  "description": "A modular machine, armor, and tool mod for Minecraft",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["LousyLynx"],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
