@@ -14,4 +14,5 @@ public class AtomicAssembly {
     @Instance
     public static AtomicAssembly INSTANCE;
 
+    
 }
