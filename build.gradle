@@ -1,3 +1,4 @@
+import org.apache.tools.ant.filters.ReplaceTokens
 
 // For those who want the bleeding edge
 buildscript {
@@ -56,13 +57,17 @@ repositories {
     maven {
         url "http://maven.amadornes.com/"
     }
+    maven {
+        url  "http://dl.bintray.com/lousylynx/dev"
+    }
 }
 
 dependencies {
-    //deobfCompile "mezz.jei:jei_1.10.2:3.9.+"
+    deobfCompile "mezz.jei:jei_1.10.2:3.9.+"
     //compile "net.darkhax.tesla:Tesla:1.10-1.2.+"
     //compile "net.industrial-craft:industrialcraft-2:2.6.67-ex110:api"
     //deobfCompile "MCMultiPart:MCMultiPart:1.2.1+:universal"
+    deobfCompile "liblynx:liblynx:0.1.2-8"
 }
 
 processResources
@@ -70,33 +75,32 @@ processResources
     // this will ensure that this task is redone when the versions change.
     inputs.property "version", project.version
     inputs.property "mcversion", project.minecraft.version
-	inputs.property "modid", project.group
 
     // replace stuff in mcmod.info, nothing else
     from(sourceSets.main.resources.srcDirs) {
         include 'mcmod.info'
                 
         // replace version and mcversion
-        expand 'version':project.version, 'mcversion':project.minecraft.version, 'group':project.group
+        expand 'version':project.version, 'mcversion':project.minecraft.version
     }
         
     // copy everything else, thats not the mcmod.info
     from(sourceSets.main.resources.srcDirs) {
         exclude 'mcmod.info'
-		
-		expand 'version':project.version, 'group':project.group
     }
 }
 
 task deobfJar(type: Jar) {
     from sourceSets.main.output
+    expand('version':project.version, 'group':project.group)
     classifier 'deobf'
 }
 
 task apiJar(type: Jar, dependsOn: 'sourceMainJava') {
     from sourceSets.main.allSource
     from sourceSets.main.output
-    include 'atomicassembly/api/**/*'
+    include 'liblynx/api/**/*'
+    expand('version':project.version, 'group':project.group)
     classifier 'api'
 }
 
