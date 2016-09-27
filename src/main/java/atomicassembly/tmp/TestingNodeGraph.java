@@ -10,4 +10,10 @@ public class TestingNodeGraph extends RegistryNodeGraph {
         super.commonPreInit();
         FMLLog.info("Common pre init was called");
     }
+
+    @Override
+    public void clientPreInit(){
+        super.clientPreInit();
+        FMLLog.info("Client pre init was called");
+    }
 }

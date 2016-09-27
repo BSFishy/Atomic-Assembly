@@ -13,12 +13,14 @@ public class TestingTileBlock extends TileBlockNode {
 
     @Override
     public void commonPreInit(){
+        FMLLog.info(getBlock().name + " is being pre-inited");
         super.commonPreInit();
         FMLLog.info(getBlock().name + " is being pre-inited");
     }
 
     @Override
     public void commonInit(){
+        FMLLog.info(getBlock().name + " is being inited");
         super.commonInit();
         FMLLog.info(getBlock().name + " is being inited");
     }
