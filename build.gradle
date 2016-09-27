@@ -92,7 +92,6 @@ processResources
 
 task deobfJar(type: Jar) {
     from sourceSets.main.output
-    expand('version':project.version, 'group':project.group)
     classifier 'deobf'
 }
 
@@ -100,7 +99,6 @@ task apiJar(type: Jar, dependsOn: 'sourceMainJava') {
     from sourceSets.main.allSource
     from sourceSets.main.output
     include 'liblynx/api/**/*'
-    expand('version':project.version, 'group':project.group)
     classifier 'api'
 }
 
