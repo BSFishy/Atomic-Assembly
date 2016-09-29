@@ -1,17 +1,16 @@
 {
   "forge_marker": 1,
   "defaults": {
-    "model": "orientable",
+	"model": "atomicassembly:subatomic_particle_extractor",
     "textures": {
-      "side": "atomicassembly:blocks/side",
-      "top": "atomicassembly:blocks/side",
-      "front": "atomicassembly:blocks/subatomic_particle_extractor"
-    }
+      "particle": "atomicassembly:blocks/subatomic_particle_extractor"
+    },
+	"uvlock": false
   },
   "variants": {
     "inventory": [
       {
-        "y": 0
+        "transform": "forge:default-block"
       }
     ],
     "direction": {

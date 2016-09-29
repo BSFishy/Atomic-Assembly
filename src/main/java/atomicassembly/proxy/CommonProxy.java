@@ -17,10 +17,12 @@ public class CommonProxy extends liblynx.api.proxy.CommonProxy {
     public void preInit(FMLPreInitializationEvent e) {
         AtomicAssembly.initProxyNodeGraph();
         // BLOCKS
-        AtomicAssembly.PROXYNODEGRAPH.addBlock(new TileBlockNode(AtomicAssemblyBlocks.SUBATOMIC_PATICLE_EXTRACTOR, new TileSubatomicParticleExtractor(), 0, new ModelResourceLocation("atomicassembly:subatomic_particle_extractor", "inventory")));
+        AtomicAssembly.PROXYNODEGRAPH.addBlock(AtomicAssemblyBlocks.SUBATOMIC_PARTICLE_EXTRACTOR_NODE);
 
         // ITEMS
-        AtomicAssembly.PROXYNODEGRAPH.addItem(new ItemNode(AtomicAssemblyItems.PROTON, 0, new ModelResourceLocation("atomicassembly:proton")));
+        AtomicAssembly.PROXYNODEGRAPH.addItem(AtomicAssemblyItems.PROTON_NODE);
+        AtomicAssembly.PROXYNODEGRAPH.addItem(AtomicAssemblyItems.NEUTRON_NODE);
+        AtomicAssembly.PROXYNODEGRAPH.addItem(AtomicAssemblyItems.ELECTRON_NODE);
 
         AtomicAssembly.PROXYNODEGRAPH.commonPreInit();
     }

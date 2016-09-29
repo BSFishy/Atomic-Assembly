@@ -17,7 +17,7 @@ public class AtomicAssembly extends ModBase {
 
     public static final String ID = "atomicassembly";
     public static final String VERSION = "0.1";
-    public static final String DEPENDENCIES = "required-after:Forge@[12.18.1.2088,);required-after:liblynx;";
+    public static final String DEPENDENCIES = "required-after:Forge@[12.18.1.2094,);required-after:liblynx;";
     public static final String GUI_FACTORY = "";
 
     @Instance
@@ -32,7 +32,7 @@ public class AtomicAssembly extends ModBase {
     public void preInit(FMLPreInitializationEvent e) {
         ModRegistry.setMODID(ID);
         ModRegistry.setMOD(INSTANCE);
-        //ModRegistry.setPROXY(PROXY);
+        ModRegistry.setPROXY(PROXY);
 
         PROXY.preInit(e);
     }

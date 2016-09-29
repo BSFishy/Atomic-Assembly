@@ -4,6 +4,7 @@ import atomicassembly.tile.TileSubatomicParticleExtractor;
 import liblynx.api.block.BlockBase;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.world.World;
 
 public class BlockSubatomicParticleExtractor extends BlockBase {
@@ -31,4 +32,21 @@ public class BlockSubatomicParticleExtractor extends BlockBase {
 
         super.breakBlock(world, pos, state);
     }*/
+
+    @Override
+    @SuppressWarnings("deprecation")
+    public boolean isOpaqueCube(IBlockState state) {
+        return false;
+    }
+
+    @Override
+    @SuppressWarnings("deprecation")
+    public boolean isFullCube(IBlockState state) {
+        return false;
+    }
+
+    @Override
+    public BlockRenderLayer getBlockLayer() {
+        return BlockRenderLayer.CUTOUT;
+    }
 }
