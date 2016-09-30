@@ -4,6 +4,7 @@ import atomicassembly.proxy.CommonProxy;
 import liblynx.api.ModBase;
 import liblynx.api.ModRegistry;
 import liblynx.api.proxyregistry.RegistryNodeGraph;
+import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.Mod.Instance;
@@ -27,12 +28,20 @@ public class AtomicAssembly extends ModBase {
     @SidedProxy(clientSide = "atomicassembly.proxy.ClientSideProxy", serverSide = "atomicassembly.proxy.ServerSideProxy")
     public static CommonProxy PROXY;
 
+    public static Configuration CONFIG;
+
     @Override
     @EventHandler
     public void preInit(FMLPreInitializationEvent e) {
         ModRegistry.setMODID(ID);
         ModRegistry.setMOD(INSTANCE);
         ModRegistry.setPROXY(PROXY);
+
+        CONFIG = new Configuration(e.getSuggestedConfigurationFile());
+        AtomicAssemblyConfig.init(CONFIG);
+
+        if(CONFIG.hasChanged())
+            CONFIG.save();
 
         PROXY.preInit(e);
     }
