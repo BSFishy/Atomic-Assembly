@@ -1,10 +1,12 @@
 package atomicassembly;
 
+import atomicassembly.api.periodictable.ElementRegistery;
 import atomicassembly.proxy.CommonProxy;
 import liblynx.api.ModBase;
 import liblynx.api.ModRegistry;
 import liblynx.api.proxyregistry.RegistryNodeGraph;
 import net.minecraftforge.common.config.Configuration;
+import net.minecraftforge.fml.common.FMLLog;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.Mod.Instance;
@@ -30,6 +32,8 @@ public class AtomicAssembly extends ModBase {
 
     public static Configuration CONFIG;
 
+    public static ElementRegistery ELEMENTREGISTRY = new ElementRegistery();
+
     @Override
     @EventHandler
     public void preInit(FMLPreInitializationEvent e) {
@@ -42,6 +46,8 @@ public class AtomicAssembly extends ModBase {
 
         if(CONFIG.hasChanged())
             CONFIG.save();
+
+        ELEMENTREGISTRY.addDefaults();
 
         PROXY.preInit(e);
     }

@@ -8,6 +8,7 @@ import atomicassembly.tile.TileSubatomicParticleExtractor;
 import liblynx.api.proxyregistry.ItemNode;
 import liblynx.api.proxyregistry.TileBlockNode;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraftforge.fml.common.FMLLog;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
@@ -35,7 +36,7 @@ public class CommonProxy extends liblynx.api.proxy.CommonProxy {
 
     //@Override
     public void init(FMLInitializationEvent e) {
-        AtomicAssembly.initProxyNodeGraph();
+        //AtomicAssembly.initProxyNodeGraph();
         AtomicAssembly.PROXYNODEGRAPH.commmonInit();
     }
 
