@@ -47,8 +47,6 @@ public class AtomicAssembly extends ModBase {
         if(CONFIG.hasChanged())
             CONFIG.save();
 
-        ELEMENTREGISTRY.addDefaults();
-
         PROXY.preInit(e);
     }
 
@@ -56,6 +54,8 @@ public class AtomicAssembly extends ModBase {
     @EventHandler
     public void init(FMLInitializationEvent e) {
         PROXY.init(e);
+
+        ELEMENTREGISTRY.addDefaults();
     }
 
     @Override
