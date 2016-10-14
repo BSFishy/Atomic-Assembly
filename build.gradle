@@ -113,7 +113,7 @@ publishing {
         MyPublication(MavenPublication) {
             groupId = project.group
             artifactId = project.archivesBaseName
-            version = project.version
+            version = project.version + '-' + System.getenv('TRAVIS_BUILD_NUMBER')
             artifact deobfJar
             artifact apiJar
             artifact jar
