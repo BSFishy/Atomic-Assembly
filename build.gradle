@@ -37,7 +37,7 @@ sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
 minecraft {
-    version = "1.10.2-12.18.2.2099"
+    version = "1.10.2-12.18.2.2105"
     runDir = "run"
     useDepAts = true
     mappings = "snapshot_20161005"
@@ -98,7 +98,7 @@ task deobfJar(type: Jar) {
 task apiJar(type: Jar, dependsOn: 'sourceMainJava') {
     from sourceSets.main.allSource
     from sourceSets.main.output
-    include 'liblynx/api/**/*'
+    include 'atomicassembly/api/**/*'
     classifier 'api'
 }
 
