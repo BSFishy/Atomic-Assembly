@@ -20,7 +20,7 @@ public class AtomicAssembly extends ModBase {
 
     public static final String ID = "atomicassembly";
     public static final String VERSION = "0.1";
-    public static final String DEPENDENCIES = "required-after:Forge@[12.18.1.2094,);required-after:liblynx;";
+    public static final String DEPENDENCIES = "required-after:Forge@[12.18.2.2099,);required-after:liblynx;";
     public static final String GUI_FACTORY = "";
 
     @Instance
