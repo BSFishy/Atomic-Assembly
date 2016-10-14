@@ -130,7 +130,7 @@ bintray {
         repo = 'dev'
         name = 'Atomic-Assembly'
         version {
-            name = project.version
+            name = project.version + '-' + System.getenv('TRAVIS_BUILD_NUMBER')
             released = new Date()
         }
     }
