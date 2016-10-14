@@ -54,6 +54,12 @@ public class TileSubatomicParticleExtractor extends TileBase {
     private boolean working = false;
     private int progress = 0;
 
+    public TileSubatomicParticleExtractor(){
+        dataManager.addParameter(DURATION);
+        dataManager.addParameter(PROGRESS);
+        dataManager.addParameter(WORKING);
+    }
+
     @Override
     public void update() {
         if(worldObj.isRemote) {
