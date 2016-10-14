@@ -113,7 +113,7 @@ publishing {
         MyPublication(MavenPublication) {
             groupId = project.group
             artifactId = project.archivesBaseName
-            version = project.version + '-' + System.getenv('TRAVIS_BUILD_NUMBER')
+            version = project.version
             artifact deobfJar
             artifact apiJar
             artifact jar
@@ -130,7 +130,7 @@ bintray {
         repo = 'dev'
         name = 'Atomic-Assembly'
         version {
-            name = project.version + '-' + System.getenv('TRAVIS_BUILD_NUMBER')
+            name = project.version
             released = new Date()
         }
     }
